@@ -91,3 +91,7 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
+
+colorscheme desert
+set listchars=tab:→→,trail:·
+set shiftwidth=4
