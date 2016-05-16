@@ -95,6 +95,7 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-colorscheme desert
+set background=dark
+colorscheme solarized
 set listchars=tab:→→,trail:·
 set shiftwidth=4
