@@ -1,6 +1,3 @@
-" Enable pathogen.
-execute pathogen#infect()
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -9,6 +6,9 @@ endif
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" Enable pathogen.
+execute pathogen#infect()
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -95,7 +95,10 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
+set encoding=utf-8
 set background=dark
 colorscheme solarized
 set listchars=tab:→→,trail:·
+set list
 set shiftwidth=4
+set expandtab
