@@ -102,3 +102,16 @@ set listchars=tab:→→,trail:·
 set list
 set shiftwidth=4
 set expandtab
+set smarttab
+set hidden
+set noswapfile
+set ignorecase
+set smartcase
+
+let s:dir = has('win32') ? '$APPDATA/Vim' : isdirectory($HOME.'/Library') ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
+let &backupdir = expand(s:dir) . '/backup//'
+let &undodir = expand(s:dir) . '/undo//'
+
+let mapleader = "\<Space>"
+nmap <Leader>tt :NERDTreeToggle<CR>
+nmap <Leader>tf :NERDTreeFind<CR>
