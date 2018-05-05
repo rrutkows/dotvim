@@ -93,8 +93,6 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 set encoding=utf-8
-set background=dark
-colorscheme solarized
 set listchars=tab:→→,trail:·
 set list
 set shiftwidth=4
@@ -104,6 +102,13 @@ set hidden
 set noswapfile
 set ignorecase
 set smartcase
+
+if has('gui_running') || &term=~'xterm'
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme desert
+endif
 
 let s:dir = has('win32') ? '$APPDATA/Vim' : isdirectory($HOME.'/Library') ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
 let &backupdir = expand(s:dir) . '/backup//'
