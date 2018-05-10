@@ -110,9 +110,19 @@ else
   colorscheme desert
 endif
 
-let s:dir = has('win32') ? '$APPDATA/Vim' : isdirectory($HOME.'/Library') ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
-let &backupdir = expand(s:dir) . '/backup//'
-let &undodir = expand(s:dir) . '/undo//'
+if has('win32')
+    let s:dir = '$APPDATA/Vim'
+elseif has('win32unix')
+    let s:dir = '$HOME/AppData/Roaming/Vim'
+elseif isdirectory($HOME.'/Library')
+    let s:dir = '~/Library/Vim'
+elseif empty($XDG_DATA_HOME)
+    let s:dir = '~/.local/share/vim'
+else
+    let s:dir = '$XDG_DATA_HOME/vim'
+endif
+let &backupdir = expand(s:dir) . '/backup/'
+let &undodir = expand(s:dir) . '/undo/'
 
 let mapleader = "\<Space>"
 nmap <Leader>tt :NERDTreeToggle<CR>
