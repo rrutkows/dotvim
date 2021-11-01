@@ -141,11 +141,9 @@ set noswapfile
 set ignorecase
 set smartcase
 
-if has('gui_running') || &term=~'xterm'
+if has('gui_running')
   set background=dark
   colorscheme solarized
-else
-  colorscheme desert
 endif
 
 let mapleader = "\<Space>"
